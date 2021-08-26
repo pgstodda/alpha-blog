@@ -1,0 +1,14 @@
+        <% if @article.errors.full_messages.count>0 %>
+        <div class="container">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <h4 class = "alert-heading">Not saved because:</h4>
+            <ul>
+            <% @article.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+            <button type="button" class="btn-close" data-bs-dismiss="alert">
+            </button>
+          </div>
+        </div>
+        <% end %>
